@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 type Props = {
   navItems: {
     label: string;
@@ -6,20 +8,80 @@ type Props = {
   }[];
 };
 const { navItems = [] }: Props = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
-<header>
+<header
+  id="siteHeader"
+  data-menu-open={false}
+  class="group bg-white data-[menu-open=true]:fixed data-[menu-open=true]:inset-0 data-[menu-open=true]:z-50 data-[menu-open=true]:overflow-hidden"
+>
   <div class="container py-2">
     <nav class="flex items-center justify-between">
       <div>
         <a href="/" class="text-xl font-bold uppercase">Niwux</a>
       </div>
+
       <div class="hidden gap-4 md:flex">
-        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class={
+                currentPath.startsWith(item.href)
+                  ? "underline"
+                  : "text-slate-600"
+              }
+            >
+              {item.label}
+            </a>
+          ))
+        }
       </div>
       <div>
-        <a href="/login">Login</a>
+        <button id="menuButton" class="md:hidden">
+          <Icon
+            name="mdi:close"
+            size={24}
+            class="hidden group-data-[menu-open=true]:block"
+          />
+          <Icon
+            name="mdi:menu"
+            size={24}
+            class="group-data-[menu-open=true]:hidden"
+          />
+        </button>
       </div>
     </nav>
   </div>
+
+  <div class="hidden py-4 group-data-[menu-open=true]:block">
+    <div class="container">
+      <div class="flex flex-col gap-4">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class={
+                currentPath.startsWith(item.href)
+                  ? "underline"
+                  : "text-slate-600"
+              }
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </header>
+<script>
+  const header = document.getElementById("siteHeader")!;
+  const button = document.getElementById("menuButton")!;
+
+  button.addEventListener("click", () => {
+    const isOpen = header.dataset.menuOpen === "true";
+    header.dataset.menuOpen = (!isOpen).toString();
+  });
+</script>
