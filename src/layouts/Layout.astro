@@ -1,5 +1,5 @@
 ---
-
+import Header from "../components/Header.astro";
 ---
 
 <html lang="en">
@@ -11,6 +11,13 @@
     <title>Astro</title>
   </head>
   <body>
+    <Header
+      navItems={[
+        { label: "Home", href: "/" },
+        { label: "About", href: "/about" },
+        { label: "Contact", href: "/contact" },
+      ]}
+    />
     <slot />
   </body>
 </html>

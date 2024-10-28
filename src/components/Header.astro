@@ -1,0 +1,27 @@
+---
+type Props = {
+  navItems: {
+    label: string;
+    href: string;
+  }[];
+};
+const { navItems = [] }: Props = Astro.props;
+---
+
+<header>
+  <div class="container py-2">
+    <nav class="flex justify-between items-center">
+      <div>
+        <a href="/">Home</a>
+      </div>
+      <div class="flex gap-4">
+        {navItems.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))}
+      </div>
+      <div>
+        <a href="/login">Login</a>
+      </div>
+    </nav>
+  </div>
+</header>
