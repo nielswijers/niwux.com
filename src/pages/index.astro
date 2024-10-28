@@ -1,7 +1,9 @@
 ---
+import { Image, Picture } from "astro:assets";
 import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
 import Layout from "../layouts/Layout.astro";
+import heroImage from "../assets/images/contact.webp";
 ---
 
 <Layout>
@@ -14,5 +16,8 @@ import Layout from "../layouts/Layout.astro";
     description="Astro has many features that make it a great choice for building static sites."
   >
     <p>Astro is a static site builder for the web.</p>
+    <p>
+      <Picture src={heroImage} alt="Astro" />
+    </p>
   </Section>
 </Layout>
