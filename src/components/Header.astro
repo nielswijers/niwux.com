@@ -10,14 +10,12 @@ const { navItems = [] }: Props = Astro.props;
 
 <header>
   <div class="container py-2">
-    <nav class="flex justify-between items-center">
+    <nav class="flex items-center justify-between">
       <div>
-        <a href="/">Home</a>
+        <a href="/" class="text-xl font-bold uppercase">Niwux</a>
       </div>
-      <div class="flex gap-4">
-        {navItems.map((item) => (
-          <a href={item.href}>{item.label}</a>
-        ))}
+      <div class="hidden gap-4 md:flex">
+        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
       </div>
       <div>
         <a href="/login">Login</a>
