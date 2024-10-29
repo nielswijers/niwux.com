@@ -1,0 +1,22 @@
+---
+type Props = {
+  links: {
+    label: string;
+    href: string;
+  }[];
+};
+const { links = [] }: Props = Astro.props;
+---
+
+<div class="grid grid-cols-3 gap-2">
+  {
+    links.map((link) => (
+      <a
+        href={link.href}
+        class="inline-flex h-10 items-center justify-center overflow-hidden text-nowrap rounded-full border border-sky-700 px-4 text-sm"
+      >
+        {link.label}
+      </a>
+    ))
+  }
+</div>

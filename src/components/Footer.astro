@@ -1,0 +1,67 @@
+---
+import { Icon } from "astro-icon/components";
+import Links from "./Links.astro";
+
+type Props = {
+  navItems: { label: string; href: string }[];
+};
+const { navItems }: Props = Astro.props;
+---
+
+<footer class="bg-sky-950 py-10 text-white">
+  <div class="container py-8">
+    <div
+      class="place-content-center items-center justify-center space-y-8 px-4 lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-8 lg:space-y-0"
+    >
+      <div
+        class="text-center text-4xl font-bold md:text-5xl lg:text-4xl xl:text-5xl"
+      >
+        Lets make something great together
+      </div>
+      <div class="text-center text-lg text-gray-300">
+        Bring your ideas to life with custom solutions designed to drive real
+        results. Together, we’ll build software that’s powerful, adaptable, and
+        tailored to your needs
+      </div>
+      <div class="text-center">
+        <a
+          href="/contact"
+          class="inline-flex h-10 items-center gap-2 rounded-full bg-sky-800 px-4"
+        >
+          <span>Let's talk</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-4 w-4"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+          </svg>
+        </a>
+      </div>
+      <div>
+        <Links
+          links={[
+            { label: "Email me", href: "mailto:hello@niwux.com" },
+            { label: "Dribbble", href: "https://dribbble.com/niwux" },
+            { label: "Instagram", href: "https://instagram.com/niwux" },
+            { label: "Twitter", href: "https://twitter.com/niwux" },
+            { label: "LinkedIn", href: "https://linkedin.com/in/niwux" },
+            { label: "Github", href: "https://github.com/niwux" },
+          ]}
+        />
+      </div>
+    </div>
+    <div class="mt-4 flex justify-between border-t pt-4">
+      <nav class="flex gap-4">
+        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      </nav>
+      <div>© 2024 Niwux. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
