@@ -1,18 +1,5 @@
----
-type Props = {
-  title: string;
-  description: string;
-};
-
-const { title, description }: Props = Astro.props;
----
-
 <section class="py-12">
   <div class="container">
-    <div class="max-w-3xl">
-      <h2 class="text-2xl font-bold">{title}</h2>
-      <p class="text-lg">{description}</p>
-    </div>
     <slot />
   </div>
 </section>

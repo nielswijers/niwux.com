@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { cn } from "../utils/utils";
 
 type Props = {
   navItems: {
@@ -8,38 +9,58 @@ type Props = {
   }[];
 };
 const { navItems = [] }: Props = Astro.props;
-const currentPath = Astro.url.pathname;
+const currentPath = Astro.url.pathname.slice(1);
+
+function isCurrent(href: string) {
+  return currentPath === ""
+    ? href === "/"
+    : href.slice(1).startsWith(currentPath);
+}
 ---
 
 <header
   id="siteHeader"
   data-menu-open={false}
-  class="group bg-white data-[menu-open=true]:fixed data-[menu-open=true]:inset-0 data-[menu-open=true]:z-50 data-[menu-open=true]:overflow-hidden"
+  class="group z-10 border-b bg-white shadow data-[menu-open=true]:fixed data-[menu-open=true]:inset-0 data-[menu-open=true]:z-50 data-[menu-open=true]:overflow-hidden"
 >
   <div class="container py-2">
-    <nav class="flex items-center justify-between">
+    <nav class="flex h-14 items-center justify-between">
       <div>
         <a href="/" class="text-xl font-bold uppercase">Niwux</a>
       </div>
 
-      <div class="hidden gap-4 md:flex">
+      <div class="mt-2 hidden gap-4 md:flex">
         {
-          navItems.map((item) => (
-            <a
-              href={item.href}
-              class={
-                currentPath.startsWith(item.href)
-                  ? "underline"
-                  : "text-slate-600"
-              }
-            >
-              {item.label}
-            </a>
-          ))
+          navItems.map((item) => {
+            return (
+              <a
+                href={item.href}
+                class={cn("group/link inline-flex flex-col items-center gap-1")}
+                aria-current={isCurrent(item.href) ? "page" : undefined}
+              >
+                <span>{item.label}</span>
+                <span
+                  role="presentation"
+                  class={cn(
+                    "block h-0.5 bg-slate-600 transition-all group-hover/link:w-5",
+                    isCurrent(item.href) ? "w-5" : "w-0",
+                  )}
+                />
+              </a>
+            );
+          })
         }
       </div>
-      <div>
-        <button id="menuButton" class="md:hidden">
+      <div class="flex items-center gap-2">
+        <a
+          href="/contact"
+          class="inline-flex rounded-full bg-slate-200 px-3 py-1.5"
+          >Let's talk</a
+        >
+        <button
+          id="menuButton"
+          class="inline-flex rounded-full bg-slate-200 px-3 py-1.5 md:hidden"
+        >
           <Icon
             name="mdi:close"
             size={24}
@@ -57,18 +78,24 @@ const currentPath = Astro.url.pathname;
 
   <div class="hidden py-4 group-data-[menu-open=true]:block">
     <div class="container">
-      <div class="flex flex-col gap-4">
+      <div class="mt-10 flex flex-col items-center gap-4">
         {
           navItems.map((item) => (
             <a
               href={item.href}
-              class={
-                currentPath.startsWith(item.href)
-                  ? "underline"
-                  : "text-slate-600"
-              }
+              class={cn(
+                "group/link inline-flex flex-col items-center gap-1 text-xl",
+              )}
+              aria-current={isCurrent(item.href) ? "page" : undefined}
             >
-              {item.label}
+              <span>{item.label}</span>
+              <span
+                role="presentation"
+                class={cn(
+                  "block h-0.5 bg-slate-600 transition-all group-hover/link:w-5",
+                  isCurrent(item.href) ? "w-5" : "w-0",
+                )}
+              />
             </a>
           ))
         }

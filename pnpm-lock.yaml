@@ -17,6 +17,9 @@ importers:
       '@fontsource-variable/nunito-sans':
         specifier: ^5.1.0
         version: 5.1.0
+      '@fontsource/sue-ellen-francisco':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@iconify-json/mdi':
         specifier: ^1.2.1
         version: 1.2.1
@@ -26,6 +29,12 @@ importers:
       astro-icon:
         specifier: ^1.1.1
         version: 1.1.1
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      tailwind-merge:
+        specifier: ^2.5.4
+        version: 2.5.4
       tailwindcss:
         specifier: ^3.4.14
         version: 3.4.14
@@ -350,6 +359,9 @@ packages:
 
   '@fontsource-variable/nunito-sans@5.1.0':
     resolution: {integrity: sha512-XiX+CmDDROJpUGFHr+XtcOaRaj4ramC8+62lQUO0LvvT2riB3jTBdRB6YbiLTt6Nu0IxSgLwwXzo0WbIako70Q==}
+
+  '@fontsource/sue-ellen-francisco@5.1.0':
+    resolution: {integrity: sha512-y7L1nCeERdICDIMDyyjEJVjVZRGCDIrbFuXKBcDW/SkdZodfLMHdRc8OM5N/ilH8rr0A3RzQMLq0baoePluHBQ==}
 
   '@iconify-json/mdi@1.2.1':
     resolution: {integrity: sha512-dSkQU78gsZV6Yxnq78+LuX7jzeFC/5NAmz7O3rh558GimGFcwMVY/OtqRowIzjqJBmMmWZft7wkFV4TrwRXjlg==}
@@ -2077,6 +2089,9 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
+  tailwind-merge@2.5.4:
+    resolution: {integrity: sha512-0q8cfZHMu9nuYP/b5Shb7Y7Sh1B7Nnl5GqNr1U+n2p6+mybvRtayrQ+0042Z5byvTA8ihjlP8Odo8/VnHbZu4Q==}
+
   tailwindcss@3.4.14:
     resolution: {integrity: sha512-IcSvOcTRcUtQQ7ILQL5quRDg7Xs93PdJEk1ZLbhhvJc7uj/OAhYOnruEiwnGgBvUtaUAJ8/mhSw1o8L2jCiENA==}
     engines: {node: '>=14.0.0'}
@@ -2772,6 +2787,8 @@ snapshots:
     optional: true
 
   '@fontsource-variable/nunito-sans@5.1.0': {}
+
+  '@fontsource/sue-ellen-francisco@5.1.0': {}
 
   '@iconify-json/mdi@1.2.1':
     dependencies:
@@ -4804,6 +4821,8 @@ snapshots:
       css-what: 6.1.0
       csso: 5.0.5
       picocolors: 1.1.1
+
+  tailwind-merge@2.5.4: {}
 
   tailwindcss@3.4.14:
     dependencies:

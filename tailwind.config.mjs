@@ -5,10 +5,11 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Nunito Sans Variable", "sans-serif"],
+        handwriting: ["Sue Ellen Francisco", "cursive"],
       },
       container: {
         center: true,
-        padding: "1rem",
+        padding: "1.5rem",
       },
     },
   },
