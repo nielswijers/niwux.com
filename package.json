@@ -15,6 +15,7 @@
     "@fontsource-variable/nunito-sans": "^5.1.0",
     "@fontsource/sue-ellen-francisco": "^5.1.0",
     "@iconify-json/mdi": "^1.2.1",
+    "@iconify-json/tabler": "^1.2.7",
     "astro": "^4.16.7",
     "astro-icon": "^1.1.1",
     "clsx": "^2.1.1",
