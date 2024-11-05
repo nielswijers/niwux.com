@@ -8,9 +8,9 @@ const projectsCollection = defineCollection({
       type: z.string(),
       description: z.string(),
       client: z.string(),
-      datum: z.date(),
-      uitgelicht: z.boolean(),
-      afbeelding: image(),
+      date: z.date(),
+      featured: z.boolean(),
+      image: image(),
     }),
 });
 

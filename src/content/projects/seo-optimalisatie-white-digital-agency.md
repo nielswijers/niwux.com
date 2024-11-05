@@ -13,9 +13,9 @@ technologies:
 type: "Web Applicatie"
 description: "Server-side rendering implementatie met Algolia voor verbeterde zoekoptimalisatie"
 client: "WHITE Digital Agency"
-datum: 2024-03-15
-uitgelicht: true
-afbeelding: "@/assets/images/projects/seo-optimalisatie-white-digital-agency.png"
+date: 2024-03-15
+featured: true
+image: "@/assets/images/projects/seo-optimalisatie-white-digital-agency.png"
 ---
 
 ## Project Overzicht

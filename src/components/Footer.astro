@@ -57,11 +57,13 @@ const { navItems }: Props = Astro.props;
         />
       </div>
     </div>
-    <div class="mt-4 flex justify-between border-t pt-4">
-      <nav class="flex gap-4">
+    <div class="mt-4 justify-between border-t pt-4 md:flex">
+      <nav class="flex justify-center gap-4">
         {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
       </nav>
-      <div>© 2024 Niwux. All rights reserved.</div>
+      <div class="mt-5 text-center text-sky-700 md:mt-0">
+        © 2024 Niwux. All rights reserved.
+      </div>
     </div>
   </div>
 </footer>

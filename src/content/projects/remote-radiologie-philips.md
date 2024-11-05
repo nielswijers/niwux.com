@@ -4,9 +4,9 @@ technologies: ["React", "WebRTC", "Node.js", "Express"]
 type: "Web Applicatie"
 description: "Remote applicatie voor live radiologie consultatie"
 client: "Philips"
-datum: 2024-03-12
-uitgelicht: true
-afbeelding: "@/assets/images/projects/remote-radiologie-philips.png"
+date: 2024-03-12
+featured: true
+image: "@/assets/images/projects/remote-radiologie-philips.png"
 ---
 
 ## Project Overzicht

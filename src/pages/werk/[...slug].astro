@@ -1,6 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
 
 // Generate static paths for all projects
 export async function getStaticPaths() {
@@ -14,7 +15,7 @@ export async function getStaticPaths() {
 const { project } = Astro.props as { project: CollectionEntry<"projects"> };
 const { Content } = await project.render();
 
-const formattedDate = project.data.datum.toLocaleDateString("nl-NL", {
+const formattedDate = project.data.date.toLocaleDateString("nl-NL", {
   year: "numeric",
   month: "long",
   day: "numeric",
@@ -22,40 +23,74 @@ const formattedDate = project.data.datum.toLocaleDateString("nl-NL", {
 ---
 
 <Layout title={project.data.title}>
-  <article class="bg-gradient-to-b from-sky-50 to-white">
-    <div class="container py-20">
-      <div class="mx-auto max-w-3xl">
-        <h1 class="text-4xl font-bold md:text-5xl">{project.data.title}</h1>
+  <article class="relative">
+    {
+      project.data.image && (
+        <div class="h-52">
+          <Image
+            src={project.data.image}
+            alt={project.data.title}
+            class="h-full w-full object-cover"
+            width={1920}
+            height={1080}
+          />
+        </div>
+      )
+    }
+    <div class="relative z-10 bg-gradient-to-b from-sky-50/90 to-white">
+      <div class="container py-20">
+        <div class="mx-auto max-w-3xl">
+          <a
+            href="/werk"
+            class="mb-8 inline-flex items-center gap-2 text-sky-600 hover:text-sky-800"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m15 18-6-6 6-6"></path>
+            </svg>
+            Terug naar overzicht
+          </a>
+          <h1 class="text-4xl font-bold md:text-5xl">{project.data.title}</h1>
 
-        <div class="mt-6 flex flex-wrap gap-4">
-          <div class="rounded-full bg-sky-100 px-4 py-2">
-            {project.data.type}
+          <div class="mt-6 flex flex-wrap gap-4">
+            <div class="rounded-full bg-sky-100 px-4 py-2">
+              {project.data.type}
+            </div>
+            {
+              project.data.client && (
+                <div class="rounded-full bg-slate-100 px-4 py-2">
+                  {project.data.client}
+                </div>
+              )
+            }
           </div>
-          {
-            project.data.client && (
-              <div class="rounded-full bg-slate-100 px-4 py-2">
-                {project.data.client}
-              </div>
-            )
-          }
-        </div>
 
-        <div class="mt-4 text-gray-600">
-          Gepubliceerd op {formattedDate}
-        </div>
+          <div class="mt-4 text-gray-600">
+            Gepubliceerd op {formattedDate}
+          </div>
 
-        <div class="prose prose-lg mt-8">
-          <Content />
-        </div>
+          <div class="prose prose-lg mt-8">
+            <Content />
+          </div>
 
-        <div class="mt-12 flex flex-wrap gap-2">
-          {
-            project.data.technologies.map((tech) => (
-              <span class="rounded-full bg-sky-100 px-3 py-1 text-sm text-sky-800">
-                {tech}
-              </span>
-            ))
-          }
+          <div class="mt-12 flex flex-wrap gap-2">
+            {
+              project.data.technologies.map((tech) => (
+                <span class="rounded-full bg-sky-100 px-3 py-1 text-sm text-sky-800">
+                  {tech}
+                </span>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>

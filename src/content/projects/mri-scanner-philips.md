@@ -4,9 +4,9 @@ technologies: ["React", "Node.js", "Express", "Arduino"]
 type: "Web Applicatie"
 description: "Vernieuwde applicatie en workflow voor MRI-scanners"
 client: "Philips"
-datum: 2024-03-13
-uitgelicht: true
-afbeelding: "@/assets/images/projects/mri-scanner-philips.png"
+date: 2024-03-13
+featured: true
+image: "@/assets/images/projects/mri-scanner-philips.png"
 ---
 
 ## Project Overzicht

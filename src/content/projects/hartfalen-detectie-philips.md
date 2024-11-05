@@ -4,9 +4,9 @@ technologies: ["React", "Remix Run", "Node.js", "Express", "Tailwind"]
 type: "Web Applicatie"
 description: "AI-gebaseerde applicatie voor vroege detectie van hartfalen"
 client: "Philips"
-datum: 2024-03-14
-uitgelicht: true
-afbeelding: "@/assets/images/projects/hartfalen-detectie-philips.png"
+date: 2024-03-14
+featured: true
+image: "@/assets/images/projects/hartfalen-detectie-philips.png"
 ---
 
 ## Project Overzicht

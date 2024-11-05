@@ -4,9 +4,9 @@ technologies: ["Angular.js", "Sass", "Node.js", "Photoshop"]
 type: "Web Applicatie"
 description: "Innovatieve tool voor snellere levering van mobiele banneradvertenties"
 client: "Greenhouse Group (GroupM)"
-datum: 2024-03-11
-uitgelicht: true
-afbeelding: "@/assets/images/projects/banneradvertentie-greenhouse-group.png"
+date: 2024-03-11
+featured: true
+image: "@/assets/images/projects/banneradvertentie-greenhouse-group.png"
 ---
 
 ## Project Overzicht
