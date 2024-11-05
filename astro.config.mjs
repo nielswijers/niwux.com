@@ -1,9 +1,8 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-
 import tailwind from "@astrojs/tailwind";
-
 import icon from "astro-icon";
+import path from "path";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,4 +16,11 @@ export default defineConfig({
       },
     }),
   ],
+  vite: {
+    resolve: {
+      alias: {
+        "@": path.resolve("./src"),
+      },
+    },
+  },
 });

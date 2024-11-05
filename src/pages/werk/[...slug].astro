@@ -1,0 +1,63 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+// Generate static paths for all projects
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project: CollectionEntry<"projects">) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props as { project: CollectionEntry<"projects"> };
+const { Content } = await project.render();
+
+const formattedDate = project.data.datum.toLocaleDateString("nl-NL", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout title={project.data.title}>
+  <article class="bg-gradient-to-b from-sky-50 to-white">
+    <div class="container py-20">
+      <div class="mx-auto max-w-3xl">
+        <h1 class="text-4xl font-bold md:text-5xl">{project.data.title}</h1>
+
+        <div class="mt-6 flex flex-wrap gap-4">
+          <div class="rounded-full bg-sky-100 px-4 py-2">
+            {project.data.type}
+          </div>
+          {
+            project.data.client && (
+              <div class="rounded-full bg-slate-100 px-4 py-2">
+                {project.data.client}
+              </div>
+            )
+          }
+        </div>
+
+        <div class="mt-4 text-gray-600">
+          Gepubliceerd op {formattedDate}
+        </div>
+
+        <div class="prose prose-lg mt-8">
+          <Content />
+        </div>
+
+        <div class="mt-12 flex flex-wrap gap-2">
+          {
+            project.data.technologies.map((tech) => (
+              <span class="rounded-full bg-sky-100 px-3 py-1 text-sm text-sky-800">
+                {tech}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

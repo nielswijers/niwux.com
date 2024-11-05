@@ -1,0 +1,127 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-b from-sky-50 to-white py-20">
+    <div class="container">
+      <div class="mx-auto max-w-3xl text-center">
+        <h1 class="text-4xl font-bold md:text-5xl">Contact</h1>
+        <p class="mt-6 text-lg leading-relaxed text-gray-600">
+          Interesse in samenwerking of wil je meer weten over hoe ik jouw
+          project kan versterken? Vul het contactformulier in en ik neem zo snel
+          mogelijk contact met je op.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white py-20">
+    <div class="container">
+      <div class="mx-auto grid max-w-5xl gap-12 md:grid-cols-2">
+        <!-- Contact Info -->
+        <div>
+          <h2 class="text-2xl font-bold md:text-3xl">Contact Informatie</h2>
+          <div class="mt-6 space-y-4">
+            <p class="text-lg">Niels Wijers</p>
+            <p class="text-gray-600">Valkenswaard, Nederland</p>
+            <p>
+              <a
+                href="mailto:hello@niwux.com"
+                class="text-sky-800 hover:underline">hello@niwux.com</a
+              >
+            </p>
+            <p>
+              <a href="tel:+31646201147" class="text-sky-800 hover:underline"
+                >+31 6 46 20 11 47</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+          <h2 class="text-2xl font-bold md:text-3xl">Stuur een bericht</h2>
+          <form class="mt-6 space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700"
+                >Naam</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500"
+              />
+            </div>
+
+            <div>
+              <label
+                for="subject"
+                class="block text-sm font-medium text-gray-700">Onderwerp</label
+              >
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500"
+              />
+            </div>
+
+            <div>
+              <label
+                for="message"
+                class="block text-sm font-medium text-gray-700">Bericht</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500"
+              ></textarea>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                class="inline-flex items-center gap-2 rounded-full bg-sky-800 px-6 py-3 text-white hover:bg-sky-900"
+              >
+                <span>Verstuur bericht</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-4 w-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

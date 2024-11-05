@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+const sortedProjects = projects.sort(
+  (a, b) => b.data.datum.getTime() - a.data.datum.getTime(),
+);
+---
+
+<Layout>
+  <div class="bg-gradient-to-b from-sky-50 to-white py-20">
+    <div class="container">
+      <div class="mx-auto max-w-3xl text-center">
+        <h1 class="text-4xl font-bold md:text-5xl">Case Studies</h1>
+        <p class="mt-6 text-lg leading-relaxed text-gray-600">
+          Ontdek hoe ik verschillende uitdagingen heb aangepakt voor bedrijven
+          in uiteenlopende sectoren.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white py-20">
+    <div class="container">
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          sortedProjects.map((project) => (
+            <a href={`/werk/${project.slug}`} class="group">
+              <div class="overflow-hidden rounded-lg border bg-white transition-all duration-300 hover:shadow-lg">
+                {project.data.afbeelding && (
+                  <Image
+                    src={project.data.afbeelding}
+                    alt={project.data.title}
+                    class="aspect-video w-full object-cover"
+                    width={1000}
+                    height={1000}
+                  />
+                )}
+                <div class="p-6">
+                  <h3 class="text-xl font-bold">{project.data.title}</h3>
+                  <p class="mt-2 text-sm text-gray-600">
+                    {project.data.description}
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    {project.data.technologies.map((tech) => (
+                      <span class="rounded-full bg-sky-100 px-3 py-1 text-sm text-sky-800">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

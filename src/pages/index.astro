@@ -1,23 +1,169 @@
 ---
-import { Picture } from "astro:assets";
-import Hero from "../components/Hero.astro";
-import Section from "../components/Section.astro";
 import Layout from "../layouts/Layout.astro";
-import heroImage from "../assets/images/contact.webp";
 ---
 
 <Layout>
-  <Hero
-    title="Astro"
-    description="Astro is a static site builder for the web."
-  />
-  <Section
-    title="Features"
-    description="Astro has many features that make it a great choice for building static sites."
-  >
-    <p>Astro is a static site builder for the web.</p>
-    <p>
-      <Picture src={heroImage} alt="Astro" />
-    </p>
-  </Section>
+  <!-- Hero Section -->
+  <div class="relative min-h-screen bg-gradient-to-b from-sky-50 to-white">
+    <div class="container flex min-h-screen flex-col justify-center">
+      <div class="max-w-3xl px-4 py-20">
+        <h1 class="text-4xl font-extrabold tracking-wide md:text-5xl">
+          Welkom! Ik ben Niels Wijers, een ervaren Full Stack Developer en
+          oprichter van Niwux.
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-gray-600">
+          Met meer dan 15 jaar ervaring help ik bedrijven met het bouwen van
+          innovatieve, schaalbare oplossingen die waarde toevoegen voor de
+          gebruiker. Van complexe webapplicaties tot complete
+          projectbegeleiding, ik zorg ervoor dat elk detail klopt. Ontdek hoe ik
+          jouw digitale ambities kan realiseren.
+        </p>
+        <div class="mt-8">
+          <a
+            href="/contact"
+            class="inline-flex items-center gap-2 rounded-full bg-sky-800 px-6 py-3 text-white"
+          >
+            <span>Laten we samenwerken</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-4 w-4"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- All-in-One Solution Section -->
+  <div class="bg-white py-20">
+    <div class="container">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl font-bold md:text-4xl">
+          All-in-One Project Solution
+        </h2>
+        <p class="mt-6 text-lg leading-relaxed text-gray-600">
+          Bij Niwux bieden we all-in-one oplossingen voor jouw digitale
+          projecten. Of het nu gaat om front-end ontwikkeling, back-end
+          integratie, of cloudoplossingen, ik zorg voor een naadloze ervaring
+          van start tot finish. Mijn ervaring met diverse technologieën zoals
+          React, Node.js en cloud platforms als AWS en Azure maakt dat ik kan
+          inspelen op elke technische behoefte. Samen bouwen we aan oplossingen
+          die niet alleen werken, maar ook toekomstbestendig zijn.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Latest Work Section -->
+  <div class="bg-gradient-to-b from-sky-50 to-white py-20">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold md:text-4xl">Latest Work</h2>
+        <p class="mt-6 text-lg leading-relaxed text-gray-600">
+          In mijn carrière heb ik gewerkt aan innovatieve projecten voor
+          topbedrijven zoals Philips, SNS Bank en Vodafone. Bekijk mijn
+          portfolio om een idee te krijgen van wat ik voor jouw organisatie kan
+          betekenen.
+        </p>
+        <div class="mt-8">
+          <a
+            href="/werk"
+            class="inline-flex items-center gap-2 rounded-full bg-slate-200 px-6 py-3"
+          >
+            <span>Bekijk portfolio</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-4 w-4"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reviews Section -->
+  <div class="bg-white py-20">
+    <div class="container">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl font-bold md:text-4xl">Wat anderen zeggen</h2>
+        <p class="mt-6 text-lg leading-relaxed text-gray-600">
+          Lees wat mijn klanten en collega's zeggen over de samenwerking met
+          Niwux en mijn aanpak. Met een sterke focus op gebruiksvriendelijkheid,
+          betrouwbaarheid en samenwerking zorg ik ervoor dat elk project een
+          succes wordt.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Companies Section -->
+  <div class="bg-gradient-to-b from-sky-50 to-white py-20">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold md:text-4xl">
+          Bedrijven waar ik voor gewerkt heb
+        </h2>
+        <p class="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-600">
+          Met trots heb ik mijn vaardigheden ingezet voor toonaangevende
+          bedrijven zoals Philips, Vodafone, SNS Bank, en meer. Deze ervaringen
+          geven mij de kennis om projecten in diverse industrieën aan te pakken
+          en impactvolle oplossingen te bieden.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Section -->
+  <div class="bg-white py-20">
+    <div class="container">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl font-bold md:text-4xl">Blog Artikelen</h2>
+        <p class="mt-6 text-lg leading-relaxed text-gray-600">
+          Blijf op de hoogte van de nieuwste trends in webontwikkeling en
+          technologie. In mijn blog deel ik inzichten over innovatieve
+          ontwikkelingen, best practices en tips om jouw digitale project naar
+          een hoger niveau te tillen.
+        </p>
+        <div class="mt-8">
+          <a
+            href="/blog"
+            class="inline-flex items-center gap-2 rounded-full bg-slate-200 px-6 py-3"
+          >
+            <span>Lees meer</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-4 w-4"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
