@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import { cn } from "../utils/utils";
+import { Button, ButtonLink } from "./ui/button";
 
 type Props = {
   navItems: {
@@ -52,15 +53,9 @@ function isCurrent(href: string) {
         }
       </div>
       <div class="flex items-center gap-2">
-        <a
-          href="/contact"
-          class="inline-flex rounded-full bg-slate-200 px-3 py-1.5"
-          >Even sparren?</a
-        >
-        <button
-          id="menuButton"
-          class="inline-flex rounded-full bg-slate-200 px-3 py-1.5 md:hidden"
-        >
+        <ButtonLink href="/contact">Even sparren?</ButtonLink>
+
+        <Button id="menuButton">
           <Icon
             name="mdi:close"
             size={24}
@@ -71,7 +66,7 @@ function isCurrent(href: string) {
             size={24}
             class="group-data-[menu-open=true]:hidden"
           />
-        </button>
+        </Button>
       </div>
     </nav>
   </div>
