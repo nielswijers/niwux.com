@@ -59,7 +59,24 @@ const formattedDate = project.data.date.toLocaleDateString("nl-NL", {
             </svg>
             Terug naar overzicht
           </a>
-          <h1 class="text-4xl font-bold md:text-5xl">{project.data.title}</h1>
+
+          {
+            project.data.tagline && (
+              <p class="mt-2 text-center text-xl text-sky-600">
+                {project.data.tagline}
+              </p>
+            )
+          }
+          <h1 class="text-center text-4xl font-bold md:text-5xl">
+            {project.data.title}
+          </h1>
+          {
+            project.data.subtitle && (
+              <p class="mt-4 text-center text-2xl text-gray-600">
+                {project.data.subtitle}
+              </p>
+            )
+          }
 
           <div class="mt-6 flex flex-wrap gap-4">
             <div class="rounded-full bg-sky-100 px-4 py-2">
