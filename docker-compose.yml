@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   app:
     build:
@@ -5,6 +7,19 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
+    expose:
+      - 3000
     environment:
       - NODE_ENV=production
     restart: unless-stopped
+    networks:
+      - dokploy-network
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.app.rule=Host(`your-domain.com`)
+      - traefik.http.routers.app.entrypoints=web
+      - traefik.http.services.app.loadbalancer.server.port=3000
+
+networks:
+  dokploy-network:
+    external: true
